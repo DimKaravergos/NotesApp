@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css" type="text/css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="notes-container">
+        <h2>Welcome, <span id="usernameDisplay"></span></h2>
+        <div id="textareadiv">
+          <textarea
+            id="noteContent"
+            placeholder="Write your note here..."
+          ></textarea>
+          <button id="addNoteButton">Add Note</button>
+        </div>
+        <h3 id="test">Your Notes:</h3>
+        <ul id="notesList"></ul>
+        <button id="logoutButton">Logout</button>
+      </div>
+    </div>
+    <script>
+      // Get the textarea element
+      const noteTextarea = document.getElementById("noteContent");
+
+      // Add an event listener for input events (typing)
+      noteTextarea.addEventListener("input", function () {
+        // Calculate the height of the content and set the textarea height accordingly
+        this.style.height = "auto"; // Reset the height to auto to calculate the content height
+        this.style.height = this.scrollHeight + 10 + "px"; // Set the height to fit the content
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/00de2a7224.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
